@@ -1,0 +1,24 @@
+diff --git a/relhelper.sh b/relhelper.sh
+index cae9bc4..65e07a2 100755
+--- a/relhelper.sh
++++ b/relhelper.sh
+@@ -2,11 +2,17 @@
+ 
+ # Check the environment for whether we're cross-compiling or not
+ 
++RELX_OPT=""
++
++if [ -n "$DESTDIR" ]; then
++	RELX_OPT="${RELX_OPT} -o ${DESTDIR}"
++fi
++
+ if [ -z "$NERVES_SDK_SYSROOT" ]; then
+ 	echo "Generating a host release (Did you forget to load the nerves environment?)"
+-	relx
++	relx $RELX_OPT
+ else
+ 	echo "Generating a cross-compiled release"
+-	relx --system_libs $NERVES_SDK_SYSROOT/usr/lib/erlang/lib
++	relx $RELX_OPT --system_libs $NERVES_SDK_SYSROOT/usr/lib/erlang/lib
+ fi
+ 
