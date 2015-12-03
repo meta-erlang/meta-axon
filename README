@@ -1,3 +1,11 @@
+meta-axon
+=========
+
+This layer's purpose is to create a set of examples to guide
+meta-erlang users how to set and use Erlang with Yocto Project
+
+The original idea came from http://nerves-project.org.
+
 This layer depends on:
 
 URI: git://github.com/openembedded/oe-core.git
@@ -12,9 +20,9 @@ URI: git://github.com/joaohd/meta-erlang.git
 branch: master
 revision: HEAD
 
-Send pull requests to openembedded-devel@lists.openembedded.org with '[meta-erlang]' in the subject'
+Send pull requests to joaohf@gmail.com with '[meta-axon]' in the subject'
 
 When sending single patches, please using something like:
-'git send-email -M -1 --to openembedded-devel@lists.openembedded.org --subject-prefix=meta-erlang][PATCH'
+'git send-email -M -1 --to joaohf@gmail.com --subject-prefix=meta-axon][PATCH'
 
 Interim layer maintainer: João Henrique Freitas <joaohf@gmail.com>
