@@ -1,8 +1,8 @@
-SUMMARY = "A small image just capable of allowing a device to boot with Nerves demo Erlang."
+SUMMARY = "A small image just capable of allowing a device to boot with Axon demo Erlang."
 
 IMAGE_INSTALL = "\
     packagegroup-erlang-embedded-initscripts \
-    nerves-demo \
+    axon \
     "
 
 IMAGE_LINGUAS = " "
