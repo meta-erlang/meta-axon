@@ -14,7 +14,7 @@ RDEPENDS_${PN} += " glfw glew"
 CFLAGS_append = " -fPIC "
 
 SRC_URI = "\
-    git://github.com/joaohf/axon;branch=master \
+    git://github.com/joaohf/axon-scenic;branch=master \
     "
 
 inherit mix
