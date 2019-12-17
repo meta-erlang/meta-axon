@@ -1,6 +1,8 @@
 meta-axon
 =========
 
+[![CircleCI](https://circleci.com/gh/joaohf/meta-axon/tree/master.svg?style=svg)](https://circleci.com/gh/joaohf/meta-axon/tree/master)
+
 This layer's purpose is to create a set of examples to guide
 meta-erlang users how to set and use Erlang with Yocto Project
 
