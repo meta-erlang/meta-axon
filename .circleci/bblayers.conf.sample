@@ -7,4 +7,5 @@ BBLAYERS ?= " \
   ##OEROOT##/meta-yocto-bsp \
   ##OEROOT##/../meta-erlang \
   ##OEROOT##/../meta-oe/meta-oe \
+  ##OEROOT##/../meta-oe/meta-axon \
   "

@@ -33,10 +33,6 @@ jobs:
           name: Initialize build directory
           command: TEMPLATECONF=../.circleci source poky/oe-init-build-env build
       - run:
-          name: Build erlang
-          command: source poky/oe-init-build-env build && bitbake erlang
-          no_output_timeout: 50m
-      - run:
           name: Build axon-embedded-image-minimal
           command: source poky/oe-init-build-env build && bitbake axon-embedded-image-minimal
           no_output_timeout: 50m
