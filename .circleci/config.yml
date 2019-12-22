@@ -33,8 +33,8 @@ jobs:
           name: Initialize build directory
           command: TEMPLATECONF=../.circleci source poky/oe-init-build-env build
       - run:
-          name: Build axon-embedded-image-minimal
-          command: source poky/oe-init-build-env build && bitbake axon-embedded-image-minimal
+          name: Build eclero-embedded-image-minimal
+          command: source poky/oe-init-build-env build && bitbake eclero-embedded-image-minimal
           no_output_timeout: 50m
       - run:
           name: Build axon-image-minimal
