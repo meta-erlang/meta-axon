@@ -1,12 +1,9 @@
 meta-axon
 =========
 
-[![CircleCI](https://circleci.com/gh/joaohf/meta-axon/tree/master.svg?style=svg)](https://circleci.com/gh/joaohf/meta-axon/tree/master)
-
-This layer's purpose is to create a set of examples to guide
-meta-erlang users how to set and use Erlang with Yocto Project
-
-The original idea came from http://nerves-project.org.
+The purpose of this layer is to create a set of examples to guide
+meta-erlang users how to set and use Erlang and Elixir (or any other BEAM based language)
+with Yocto Project.
 
 This layer depends on:
 
