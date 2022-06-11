@@ -9,7 +9,7 @@ PV = "0.1.0-git${SRCPV}"
 PR = "r0"
 
 SRC_URI = "\
-    git://github.com/joaohf/axon;branch=master \
+    git://github.com/joaohf/axon;branch=master;protocol=https \
     "
 
 inherit rebar3
