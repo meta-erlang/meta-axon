@@ -1,0 +1,77 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+header:
+  version: 13
+
+repos:
+  meta-axon:
+  meta-arm:
+    url: https://git.yoctoproject.org/git/meta-arm
+    refspec: kirkstone
+    path: layers/meta-arm
+    layers:
+      meta-arm: included
+      meta-arm-toolchain: included
+  meta-virtualization:
+    url: https://git.yoctoproject.org/git/meta-virtualization
+    refspec: kirkstone
+    path: layers/meta-virtualization
+  meta-erlang:
+    url: https://github.com/meta-erlang/meta-erlang.git
+    path: layers/meta-erlang
+    refspec: kirkstone
+  meta-openembedded:
+    url: http://git.openembedded.org/meta-openembedded
+    path: layers/meta-openembedded
+    refspec: kirkstone
+    layers:
+      meta-oe:
+      meta-filesystems:
+      meta-networking:
+      meta-python:
+      meta-perl:
+  poky:
+    url: "https://git.yoctoproject.org/git/poky"
+    refspec: kirkstone
+    path: layers/poky
+    layers:
+      meta:
+      meta-poky:
+      meta-yocto-bsp:
+
+machine: generic-arm64
+distro: axon
+
+local_conf_header:
+   meta-custom: |
+    # buildhistory
+    INHERIT += "buildhistory"
+    BUILDHISTORY_COMMIT = "1"
+
+    # package ipk
+    PACKAGE_CLASSES = "package_ipk"
+
+   axon-base: |
+    CONF_VERSION = "2"
+    PACKAGECONFIG:remove:pn-qemu-system-native = "gtk+ sdl"
+    DL_DIR = "/work/yocto/downloads"
+    INHERIT += "rm_work"
+    RM_WORK_EXCLUDE = "erlang erlang-native nativesdk-erlang qemu-system-native"
+
+   diskmon: |
+    BB_DISKMON_DIRS = "\
+      STOPTASKS,${TMPDIR},1G,100K \
+      STOPTASKS,${DL_DIR},1G,100K \
+      STOPTASKS,${SSTATE_DIR},1G,100K \
+      STOPTASKS,/tmp,100M,100K \
+      HALT,${TMPDIR},100M,1K \
+      HALT,${DL_DIR},100M,1K \
+      HALT,${SSTATE_DIR},100M,1K \
+      HALT,/tmp,10M,1K"
+
+target: 
+  - axon-image-cloud
+
+env:
+  AXON_GENERIC_ARM64_FILESYSTEM: "1"
+  AXON_GENERIC_ARM64_DEFAULTTUNE: "armv8a-crc"

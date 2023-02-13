@@ -1,0 +1,8 @@
+header:
+  version: 10
+  includes:
+    - meta-erlang-graviton2-ami.yaml
+
+local_conf_header:
+  with-livebook: |
+   IMAGE_INSTALL:append = " livebook"

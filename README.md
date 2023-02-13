@@ -1,27 +1,28 @@
-meta-axon
-=========
+# meta-axon
 
 The purpose of this layer is to create a set of examples to guide
-meta-erlang users how to set and use Erlang and Elixir (or any other BEAM based language)
-with Yocto Project.
+[meta-erlang](https://meta-erlang.github.io/) users how to set and use
+Erlang and Elixir (or any other BEAM based language) with Yocto Project.
 
-This layer depends on:
+## Building meta-axon
 
-URI: git://github.com/openembedded/oe-core.git
-branch: master
-revision: HEAD
+1. Clone the repo from the instance or upload the code and invoke build command. For example:
 
-URI: git://github.com/openembedded/meta-oe.git
-branch: master
-revision: HEAD
+    ```bash
+    git clone https://github.com/joaohf/meta-axon.git
+    cd meta-axon
+    ```
 
-URI: git://github.com/joaohd/meta-erlang.git
-branch: master
-revision: HEAD
+1. Customize the meta-erlang-graviton2-ami.yaml as needed and invoke build:
 
-Send pull requests to joaohf@gmail.com with '[meta-axon]' in the subject'
+    ```bash
+    kas build kas/machines/meta-erlang-graviton2-ami.yaml
+    ```
 
-When sending single patches, please using something like:
-'git send-email -M -1 --to joaohf@gmail.com --subject-prefix=meta-axon][PATCH'
+1. Or build a ready to use image with Erlang, Elixir and livebook:
+
+    ```bash
+    kas build kas/machines/meta-erlang-graviton2-livebook.yaml
+    ```
 
 Interim layer maintainer: João Henrique Freitas <joaohf@gmail.com>
