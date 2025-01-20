@@ -15,8 +15,6 @@ NERVES_HUB_LINK = "\
     elixir \
     elixir-modules-dev \
     libubootenv-bin \
-    u-boot-env \
-    boardid \
     nerves-hub-link \
     "
 
