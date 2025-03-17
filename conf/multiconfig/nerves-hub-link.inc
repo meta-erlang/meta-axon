@@ -14,15 +14,19 @@ NERVES_HUB_LINK = "\
     erlang-modules-dev \
     elixir \
     elixir-modules-dev \
-    libubootenv-bin \
     nerves-hub-link \
+    fwup-fw-env \
+    \
+    connman \
+    connman-client \
     "
 
 IMAGE_CLASSES += "image_types_fwup"
-IMAGE_FSTYPES = "fwup"
+IMAGE_FSTYPES = "fwup fwup.bmap"
 
-IMAGE_INSTALL:append:pn-core-image-minimal = " ${NERVES_HUB_LINK}"
-IMAGE_INSTALL:append:pn-core-image-full-cmdline = " ${NERVES_HUB_LINK}"
+IMAGE_INSTALL:append = " ${NERVES_HUB_LINK} util-linux"
+
+IMAGE_FEATURES:append = " ssh-server-openssh"
 
 #IMAGE_ROOTFS_EXTRA_SPACE:pn-core-image-minimal = "131072"
 
