@@ -6,7 +6,7 @@ IMAGE_INSTALL = "\
     "
 
 IMAGE_LINGUAS = " "
-USE_NLS="no"
+USE_NLS = "no"
 
 LICENSE = "MIT"
 
